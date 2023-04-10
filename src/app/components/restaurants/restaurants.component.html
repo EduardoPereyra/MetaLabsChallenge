@@ -1,0 +1,53 @@
+<div class="map-container">
+  <div #map id="map"></div>
+  <div class="list">
+<!--    <ul>
+      <li *ngFor="let restaurant of restaurantsMarkers">
+        <span>{{restaurant.name}}</span>
+      </li>
+    </ul>-->
+    <mat-accordion *ngIf="restaurants.length > 0">
+      <mat-expansion-panel *ngFor="let restaurant of restaurants">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{restaurant.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{restaurant.address}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{restaurant.type}}</p>
+        <p>{{restaurant.phoneNumber}}</p>
+        <p>{{restaurant.hours}}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+<form class="inputs-container" [formGroup]="restaurantForm"
+      (ngSubmit)="addNewRestaurant()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Type</mat-label>
+    <input matInput placeholder="Type" formControlName="type">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="Address" formControlName="address">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone Number</mat-label>
+    <input matInput placeholder="Phone Number" formControlName="hours">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Hours</mat-label>
+    <input matInput placeholder="Hours" formControlName="phoneNumber">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Add</button>
+</form>

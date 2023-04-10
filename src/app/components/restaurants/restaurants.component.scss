@@ -1,0 +1,28 @@
+mat-form-field {
+  margin: 10px;
+}
+
+.map-container {
+  display: flex;
+
+  .list {
+    min-width: 20vw;
+    overflow-y: scroll;
+    height: 75vh;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 10px;
+
+    mat-accordion {
+      padding: 0 10px;
+
+      mat-expansion-panel {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
